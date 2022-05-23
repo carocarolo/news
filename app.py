@@ -51,7 +51,6 @@ st.altair_chart(line_chart, use_container_width=True)
 #Retrieve News Data 
 
 #Set up NEWS API 
-
 r_news = requests.get(f"https://eodhistoricaldata.com/api/news?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&s={ticker}&from={start_date}&to={end_date}")
 result_news = r_news.json()
 #print (type(result_news).__name__)
@@ -85,7 +84,7 @@ df['TextBlob_Analysis'] =df['polarity'].apply(getAnalysis )
 
 
 import nltk
-#nltk.download('punkt')
+nltk.download('punkt')
 from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer,ENGLISH_STOP_WORDS
 
 
@@ -121,7 +120,7 @@ all_words_no_urls = list(itertools.chain(*words))
 
 import nltk
 from nltk.corpus import stopwords
-#nltk.download('stopwords')
+nltk.download('stopwords')
 
 #Determinar stopwords
 stop_words = set(stopwords.words('english'))
