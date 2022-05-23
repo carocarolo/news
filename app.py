@@ -18,9 +18,9 @@ ticker=st.selectbox('Select ticker',('AAPL','EC'))
 #Select Date 
 #today = datetime.date.today()
 #tomorrow = today + datetime.timedelta(days=1)
-start_date = st.date_input('Start date')
+start_date = st.date_input('Start date', value=pd.to_datetime('2022-05-02'))
 st.text(start_date)
-end_date = st.date_input('End date')
+end_date = st.date_input('End date', value=pd.to_datetime('2022-05-05'))
 if start_date > end_date:
     st.error('Error: End date must fall after start date.')
 
